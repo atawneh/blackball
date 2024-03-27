@@ -1,0 +1,7 @@
+{
+  "name": "blackball",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
