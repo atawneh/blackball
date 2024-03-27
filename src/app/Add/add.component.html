@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="background: #003459;color: white;">
+      <div style="font-family: Aref Ruqaa, serif;text-align: center;font-size: xxx-large;">
+        <ion-icon (click)="back()" style="position: fixed;left: 0;top: 11px;"
+          name="chevron-forward-circle-outline"></ion-icon>
+        إضافة زبون جديد
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <ion-item>
+      <ion-input id="name" label="إضافة مشترك جديد" labelPlacement="stacked" placeholder="اسم المشترك"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="add()">إضافة</ion-button>
+  </div>
+</ion-content>

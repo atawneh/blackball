@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="background: #003459;color: white;">
+      <div style="font-family: Aref Ruqaa, serif;text-align: center;font-size: xxx-large;">
+      <ion-icon (click)="back()" style="position: fixed;left: 0;top: 11px;" name="chevron-forward-circle-outline"></ion-icon>
+      إضافة طلب جديد
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <ion-item>
+      <ion-input id="name" label="طلب الزبون" labelPlacement="stacked" placeholder="إضافة الطلب"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="price" type="number" id="price" label="سعر الطلب" labelPlacement="stacked"
+        placeholder="إضافة السعر"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="add()" [disabled]="!price">إضافة</ion-button>
+  </div>
+</ion-content>

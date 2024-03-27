@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="background: #003459;color: white;">
+      <div style="font-family: Aref Ruqaa, serif;text-align: center;font-size: xxx-large;">
+        الزبائن
+      </div>
+      <ion-icon (click)="NewDataBase()" style="position: absolute;font-size: xx-large;color: orangered;top: 22px;left: 10px;" name="flame-outline"></ion-icon>
+    </ion-title>
+    <ion-searchbar [(ngModel)]="search_word" (input)="search()" style="font-family: Aref Ruqaa, serif;font-size: xx-large;" search-icon="search-circle" placeholder="بحث عن زبون"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-refresher slot="fixed" [pullFactor]="0.5" [pullMin]="100" [pullMax]="200" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of player; let index = index">
+        <ion-icon (click)="presentAlert(item)" style="    color: red;
+        position: absolute;
+        font-size: x-large;
+        padding: 10px;
+        left: 10px;
+        z-index: 2;
+        top: 10px;"
+        name="close-circle-outline"></ion-icon>
+        <ion-card [routerLink]="['/details/',item.id]" style="background: #007ea7;">
+          <ion-card-header>
+            <ion-card-title
+              style="color: white;text-align: center;font-family: Aref Ruqaa, serif;">{{item.name}}</ion-card-title>
+            <ion-card-subtitle
+              style="color: white;text-align: center;font-family: Aref Ruqaa, serif;">{{item.total}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar style="text-align: center;">
+    <ion-icon style="font-size: xx-large;" ion-button [routerLink]="['/add']" name="add-circle-outline" full></ion-icon>
+  </ion-toolbar>
+</ion-footer>
+
